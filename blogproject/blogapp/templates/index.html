@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Blog Posts</h1>
+<ul>
+    {% for blog in blogs %}
+    <li>
+        <h2>
+            <a href="{% url 'blogapp:blog_detail' blog.article_title|slugify blog.author.name|slugify %}">{{
+                blog.article_title }}</a>
+        </h2>
+
+        <p>{{ blog.article|truncatewords:30 }}</p>
+        <p>Published on: {{ blog.date_of_publish }}</p>
+    </li>
+    {% empty %}
+    <li>No blog posts available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
