@@ -8,9 +8,12 @@ def index(request):
         'authors' : Author.objects.all(),
         'blogs'  : blogs,
         'categories'  : Category.objects.all(),
-    }
+    }    
     return render(request, 'index.html/', context = context)
 
-def blog_detail(request, title, author):
-    blog = get_object_or_404(Blog, article_title=title, author__name=author)
-    return render(request, 'blogapp/blog_detail.html', {'blog': blog})
+def blog_detail(request, uuid):   
+    if uuid:            
+        blog = get_object_or_404(Blog, uuid=uuid)
+        return render(request, 'blog_detail.html/', {'blog': blog})
+    else:        
+        return render(request, 'blog_detail.html/')

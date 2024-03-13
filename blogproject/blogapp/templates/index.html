@@ -6,8 +6,7 @@
     {% for blog in blogs %}
     <li>
         <h2>
-            <a href="{% url 'blogapp:blog_detail' blog.article_title|slugify blog.author.name|slugify %}">{{
-                blog.article_title }}</a>
+            <a href="{% url 'blogapp:blog_detail' uuid=blog.uuid|slugify %}"> {{ blog.article_title }}</a>
         </h2>
 
         <p>{{ blog.article|truncatewords:30 }}</p>
