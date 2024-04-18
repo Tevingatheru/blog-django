@@ -25,4 +25,4 @@ class Blog(models.Model):
     date_of_publish = models.DateField()
 
     def __str__(self):
-        return f'{self.article_title} : {self.date_of_publish} - {self.uuid} '
+        return f'{self.article_title} : {self.date_of_publish} - {self.uuid}'

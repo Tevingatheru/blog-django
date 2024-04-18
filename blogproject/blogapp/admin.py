@@ -7,7 +7,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_filter =  ('author', 'article_title', 'category')
+    list_filter =  ('author', 'article_title', 'category', 'date_of_publish')
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):

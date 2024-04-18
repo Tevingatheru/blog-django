@@ -3,21 +3,29 @@
 
 <head>
     <title>My Blog</title>
-    
+
 </head>
 
 <body>
     <header>
-        
+
     </header>
 
     <main>
+        {% block sidebar %}
+        <nav>
+            <ul>
+                <li><a href="{% url 'blogapp:index' %}">Home</a></li>
+            </ul>
+
+        </nav>
+        {% endblock %}
         {% block content %}
         {% endblock %}
     </main>
 
     <footer>
-        
+
     </footer>
 </body>
 
